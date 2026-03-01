@@ -1,0 +1,425 @@
+/* ============================================
+   CONSULTATION PAGE — Mad Libs Form Styles
+   Extends the main style.css design system
+   ============================================ */
+
+/* ============================
+   CONSULTATION HERO
+   ============================ */
+.consult-hero {
+    position: relative;
+    padding: 120px 0 48px;
+    text-align: center;
+    overflow: hidden;
+    background: var(--white);
+}
+
+.consult-hero-shape {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(91, 155, 213, 0.08) 0%, transparent 70%);
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.consult-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.consult-hero h1 {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-2xl);
+    font-weight: 800;
+    color: var(--black);
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.consult-hero-sub {
+    font-size: var(--fs-md);
+    color: var(--gray-700);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* ============================
+   PROGRESS BAR
+   ============================ */
+.progress-bar-container {
+    padding: 0 0 8px;
+    background: var(--white);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--gray-200);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--blue), var(--blue-dark));
+    border-radius: var(--radius-full);
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.progress-text {
+    font-size: var(--fs-xs);
+    color: var(--gray-500);
+    margin-top: 8px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* ============================
+   MAD LIBS FORM SECTION
+   ============================ */
+.consult-form-section {
+    padding: 40px 0 80px;
+    background: var(--white);
+}
+
+.madlibs-card {
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    padding: 36px 24px;
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.madlibs-text {
+    font-family: var(--ff-body);
+    font-size: var(--fs-lg);
+    color: var(--gray-900);
+    line-height: 2.8;
+    margin-bottom: 4px;
+}
+
+/* ============================
+   INLINE FORM FIELDS
+   ============================ */
+.madlibs-field-wrapper {
+    display: inline-block;
+    position: relative;
+    vertical-align: baseline;
+}
+
+/* Shared base styles for inline inputs and selects */
+.madlibs-select,
+.madlibs-input {
+    font-family: var(--ff-body);
+    font-size: var(--fs-lg);
+    font-weight: 600;
+    color: var(--blue-dark);
+    background: transparent;
+    border: none;
+    border-bottom: 2px dashed var(--blue);
+    padding: 2px 4px 4px;
+    margin: 0 2px;
+    outline: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 0;
+    min-width: 80px;
+}
+
+.madlibs-select {
+    padding-right: 22px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235B9BD5' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 4px center;
+    background-size: 14px;
+}
+
+.madlibs-select.wide {
+    min-width: 140px;
+}
+
+.madlibs-input {
+    width: 64px;
+    text-align: center;
+}
+
+/* Placeholder / unselected state */
+.madlibs-select:invalid,
+.madlibs-input::placeholder {
+    color: var(--gray-500);
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Focus & hover states */
+.madlibs-select:hover,
+.madlibs-input:hover {
+    border-bottom-color: var(--blue-dark);
+    border-bottom-style: solid;
+}
+
+.madlibs-select:focus,
+.madlibs-input:focus {
+    border-bottom-color: var(--blue-dark);
+    border-bottom-style: solid;
+    background-color: var(--blue-light);
+    border-radius: 4px 4px 0 0;
+}
+
+/* Filled state — solid underline */
+.madlibs-select.filled,
+.madlibs-input.filled {
+    border-bottom-style: solid;
+    border-bottom-color: var(--blue);
+    color: var(--black);
+}
+
+/* Validation error */
+.madlibs-select.error,
+.madlibs-input.error {
+    border-bottom-color: #ef4444;
+    border-bottom-style: solid;
+    animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-4px);
+    }
+
+    40% {
+        transform: translateX(4px);
+    }
+
+    60% {
+        transform: translateX(-3px);
+    }
+
+    80% {
+        transform: translateX(3px);
+    }
+}
+
+/* Remove number input spinners */
+.madlibs-input::-webkit-outer-spin-button,
+.madlibs-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.madlibs-input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* ============================
+   SUBMIT AREA
+   ============================ */
+.consult-submit-area {
+    text-align: center;
+    margin-top: 40px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.consult-submit-btn {
+    padding: 16px 40px;
+    font-size: var(--fs-md);
+    transition: all var(--transition-base);
+}
+
+.consult-submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.consult-submit-btn:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(91, 155, 213, 0.45);
+}
+
+.consult-privacy {
+    font-size: var(--fs-xs);
+    color: var(--gray-500);
+    margin-top: 16px;
+    line-height: 1.5;
+}
+
+/* ============================
+   SUCCESS OVERLAY
+   ============================ */
+.success-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(13, 13, 13, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.success-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.success-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: 48px 32px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    box-shadow: var(--shadow-xl);
+    animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.success-icon {
+    font-size: 56px;
+    margin-bottom: 16px;
+    animation: bounce 0.6s ease 0.3s both;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(0.5);
+    }
+
+    60% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.success-card h2 {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-2xl);
+    font-weight: 800;
+    color: var(--black);
+    margin-bottom: 12px;
+}
+
+.success-card p {
+    font-size: var(--fs-base);
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+.success-sub {
+    font-size: var(--fs-sm) !important;
+    color: var(--gray-500) !important;
+    margin-bottom: 24px !important;
+}
+
+.success-card .btn-primary {
+    margin-top: 16px;
+}
+
+/* ============================
+   RESPONSIVE — TABLET (768px+)
+   ============================ */
+@media (min-width: 768px) {
+    .consult-hero {
+        padding: 140px 0 56px;
+    }
+
+    .consult-hero h1 {
+        font-size: var(--fs-3xl);
+    }
+
+    .madlibs-card {
+        padding: 48px 40px;
+    }
+
+    .madlibs-text {
+        font-size: var(--fs-xl);
+        line-height: 2.6;
+    }
+
+    .madlibs-select,
+    .madlibs-input {
+        font-size: var(--fs-xl);
+    }
+
+    .madlibs-input {
+        width: 72px;
+    }
+
+    .madlibs-select.wide {
+        min-width: 180px;
+    }
+}
+
+/* ============================
+   RESPONSIVE — DESKTOP (900px+)
+   ============================ */
+@media (min-width: 900px) {
+    .consult-hero h1 {
+        font-size: var(--fs-4xl);
+    }
+
+    .madlibs-card {
+        padding: 56px 56px;
+    }
+
+    .madlibs-text {
+        font-size: 1.375rem;
+        line-height: 2.8;
+    }
+
+    .madlibs-select,
+    .madlibs-input {
+        font-size: 1.375rem;
+    }
+
+    .madlibs-input {
+        width: 80px;
+    }
+
+    .madlibs-select.wide {
+        min-width: 220px;
+    }
+}

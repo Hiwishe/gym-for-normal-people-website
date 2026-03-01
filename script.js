@@ -102,11 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.style.background = '#22c55e';
       btn.style.boxShadow = '0 4px 20px rgba(34,197,94,0.35)';
 
+      // Redirect to Mad Libs consultation form after success animation
       setTimeout(() => {
-        btn.innerHTML = originalHTML;
-        btn.style.background = '';
-        btn.style.boxShadow = '';
-        contactForm.reset();
+        window.location.href = 'consultation.html';
       }, 2500);
     });
   }
