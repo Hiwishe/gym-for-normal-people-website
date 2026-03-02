@@ -52,20 +52,18 @@
 // CONFIGURATION — Replace these with your values
 // =============================================
 const GOOGLE_FORM_CONFIG = {
-    // Replace YOUR_GOOGLE_FORM_ID with the long ID from your Google Form URL
-    actionUrl: 'https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/formResponse',
+    actionUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSc9YL-DnRwfeZaEqKZjY6cNHO_VhR5E0rKIbSGyseWG0FEixQ/formResponse',
 
-    // Replace each 'entry.XXXXXXXXX' with the real entry IDs from step 3 above
     entryIds: {
-        gender: 'entry.XXXXXXXXX',  // Q1: Gender
-        age: 'entry.XXXXXXXXX',  // Q2: Age
-        height: 'entry.XXXXXXXXX',  // Q3: Height
-        weight: 'entry.XXXXXXXXX',  // Q4: Weight
-        goal: 'entry.XXXXXXXXX',  // Q5: Fitness Goal
-        frequency: 'entry.XXXXXXXXX',  // Q6: Workout Frequency
-        duration: 'entry.XXXXXXXXX',  // Q7: Session Duration
-        location: 'entry.XXXXXXXXX',  // Q8: Exercise Location
-        injuries: 'entry.XXXXXXXXX',  // Q9: Injuries/Conditions
+        gender: 'entry.1419009173',  // Q1: Gender
+        age: 'entry.567734741',   // Q2: Age
+        height: 'entry.888202487',   // Q3: Height (cm)
+        weight: 'entry.1072545770',  // Q4: Weight (kg)
+        goal: 'entry.1424674019',  // Q5: Primary Fitness Goal
+        frequency: 'entry.1842816472',  // Q6: Workout Frequency (per week)
+        duration: 'entry.1096730959',  // Q7: Session Duration
+        location: 'entry.885566683',   // Q8: Exercise Location
+        injuries: 'entry.996967287',   // Q9: Injuries / Conditions
     }
 };
 
